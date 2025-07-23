@@ -1,0 +1,15 @@
+function quickSort(arr, si, ei):
+    if si < ei:
+        pivotIndex = partition(arr, si, ei)
+        quickSort(arr, si, pivotIndex - 1)
+        quickSort(arr, pivotIndex + 1, ei)
+
+function partition(arr, si, ei):
+    pivot = arr[ei]
+    i = si - 1
+    for j = si to ei - 1:
+        if arr[j] < pivot:
+            i = i + 1
+            swap arr[i] and arr[j]
+    swap arr[i + 1] and arr[ei]
+    return i + 1

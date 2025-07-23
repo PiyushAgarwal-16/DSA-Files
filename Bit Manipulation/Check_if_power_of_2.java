@@ -1,0 +1,8 @@
+public class Check_if_power_of_2{
+    public static boolean powerOfTwo(int n){
+        return (n & (n-1)) == 0;
+    }
+    public static void main(String args[]){
+        System.out.println(powerOfTwo(32));
+    }
+}

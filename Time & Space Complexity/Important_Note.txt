@@ -1,0 +1,2 @@
+Most of the Time & Space Complexity chapter is done on papers, so refer notes for the understanding and revision.
+Also refer to the video lectures for the same.
