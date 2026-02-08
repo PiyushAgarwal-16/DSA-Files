@@ -1,28 +1,34 @@
+
+
 public class rough4{
-    public static void rainWaterTrapping(int num[]){
-        int leftmax[] = new int[num.length];
-        int rightmax[] = new int[num.length];
-        leftmax[0] = num[0];
-        rightmax[rightmax.length-1] = num[num.length-1];
-        int trappedwater = 0;
+    public static int rainWaterTrapping(int arr[]){
+        int n = arr.length;
+        int trappedWater = 0;
 
-        for(int i = 1; i<num.length; i++){
-            leftmax[i] = Math.max(num[i], leftmax[i-1]);
+        int leftmax[] = new int[n];
+        leftmax[0] = arr[0];
+        for(int i = 1; i<n; i++){
+            leftmax[i] = Math.max(leftmax[i-1], arr[i]);
+            System.out.print(leftmax[i] + " ");
+        }
+        System.out.println();
+
+
+        int rightmax[] = new int[n];
+        rightmax[n-1] = arr[n-1];
+        for(int i = n-2; i>=0; i--){
+            rightmax[i] = Math.max(rightmax[i+1], arr[i]);
         }
 
-        for(int i = num.length - 2; i >= 0; i--){
-            rightmax[i] = Math.max(num[i], rightmax[i+1]);
+        for(int i = 0; i<n; i++){
+            int height = Math.min(leftmax[i], rightmax[i]);
+            trappedWater += (height - arr[i]);
         }
-
-        for(int i = 0; i<num.length; i++)
-        {
-            int waterlevel = Math.min(leftmax[i], rightmax[i]);
-            trappedwater += waterlevel - num[i];
-        }
-        System.out.println("Trapped Water = " + trappedwater);
+        return trappedWater;
     }
+
     public static void main(String args[]){
-        int num[] = {4,2,0,6,3,2,5};
-        rainWaterTrapping(num);
-    }
+        int arr[] = {4,2,0,6,3,2,5};
+        System.out.println(rainWaterTrapping(arr));
+    }   
 }

@@ -6,6 +6,6 @@ public class Clear_Range_of_Bits{
         return n & bitmask;
     }
     public static void main(String args[]){
-        System.out.println(clearRangeOfBits(10, 2, 4));
+        System.out.println(clearRangeOfBits(30, 2, 4));
     }
 }

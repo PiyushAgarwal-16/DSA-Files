@@ -4,6 +4,7 @@
 // Update: Completed
 
 public class Max_Subarray_Sum_Part3_Kadane_HW{
+
     public static boolean check(int numbers[]){
         for(int i = 0; i<numbers.length; i++){
             if(numbers[i]>0){

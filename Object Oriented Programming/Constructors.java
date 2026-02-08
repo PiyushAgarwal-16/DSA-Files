@@ -9,6 +9,11 @@ public class Constructors{
 
         System.out.println(s1.name);
         System.out.println(p1.color);
+        p1.color = "Blue";
+        System.out.println(p1.color);
+
+        bottle b1 = new bottle();
+        System.out.println("Bottle color: " + b1.bottleColor);
     }
 }
 
@@ -25,4 +30,12 @@ class Student{
 class Pen{
     String color;
     int tip;
+}
+
+class bottle{
+    String bottleColor;
+
+    bottle(){
+        this.bottleColor = "Blue";
+    }
 }

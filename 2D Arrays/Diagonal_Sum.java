@@ -24,7 +24,7 @@ public class Diagonal_Sum{
             // i + j = n - 1
             // j = n - 1 - i
 
-            if(i != matrix.length - i - 1){ // if conditions for overlapping element
+            if(i != matrix.length - i - 1){ // {if conditions} for overlapping element
             // here when the rows and columns will be equal it won't add it again in the sum
             // as when the rows = columns, it would already have been added in the primary diagonal
             

@@ -2,8 +2,8 @@ import java.util.*;
 
 public class InbuiltSort{
     public static void printArr(Integer arr[]){
-        for(int i = 0; i<arr.length; i++){
-            System.out.print(arr[i] + " ");
+        for (Integer arrElement : arr) {
+            System.out.print(arrElement + " ");
         }
         System.out.println();
     }

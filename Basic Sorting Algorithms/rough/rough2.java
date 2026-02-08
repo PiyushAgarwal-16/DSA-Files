@@ -21,9 +21,9 @@ public class rough2{
     }
 
     public static void selectionSort2(int num[]){
-        for(int i = 0; i<=num.length - 2; i++){
+        for(int i = 0; i< num.length - 1; i++){
             int minpos = i;
-            for(int j = i+1; j<=num.length-1; j++){
+            for(int j = i+1; j<num.length; j++){
                 if(num[minpos]>num[j]){
                     minpos = j;
                 }
@@ -41,6 +41,6 @@ public class rough2{
     }
     public static void main(String[] args) {
         int num[] = {4,5,1,3,2};
-        selectionSort2(num);
+        selectionSort(num);
     }
 }

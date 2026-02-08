@@ -3,6 +3,6 @@ public class Check_if_power_of_2{
         return (n & (n-1)) == 0;
     }
     public static void main(String args[]){
-        System.out.println(powerOfTwo(32));
+        System.out.println(powerOfTwo(-1));
     }
 }

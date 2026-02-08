@@ -1,4 +1,5 @@
 public class Max_Subarray_Sum_Part1{
+    //brute force
     public static void maxSubarraySum(int numbers[]){
     int currSum;
     int maxSum = Integer.MIN_VALUE;
@@ -11,8 +12,10 @@ public class Max_Subarray_Sum_Part1{
             currSum = 0;
             for(int k = start; k<=end; k++){
                 currSum += numbers[k];
+                System.out.print(numbers[k]+" ");
             }
-            System.out.println("current sum = " + currSum);
+            System.out.println();
+            // System.out.println("current sum = " + currSum);
             if(maxSum < currSum){
                 maxSum = currSum;
             }
