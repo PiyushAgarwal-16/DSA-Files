@@ -207,13 +207,84 @@ public class Question5{
 
     } 
 
-    public void mergeSortedLL(int k, int n){
-        Question5 finalLL = new Question5();
-        
+    public static Node merge2SortedLL(Node head1, Node head2){
+        Node t1 = head1;
+        Node t2 = head2;
+        Node dNode = new Node(-1);
+
+        Node temp = dNode;
+
+        while(t1 != null && t2 != null){
+            if(t1.data < t2.data){
+                temp.next = t1;
+                temp = t1;
+                t1 = t1.next;
+            }
+
+            else{
+                temp.next = t2;
+                temp = t2;
+                t2 = t2.next;
+            }
+
+            if(t1 != null){
+                temp.next = t1;
+            }
+            else{
+                temp.next = t2;
+            }
+        }
+        return dNode.next;
+    }
+
+    public static Node mergeKSortedLL(Node arr[]){
+        Node head = arr[0];
+        for(int i = 1; i<arr.length; i++){
+            head = merge2SortedLL(head, arr[i]);
+        }
+        return head;
     }
 
     public static void main(String[] args) {
         Question5 ll = new Question5();
+        Question5 ll2 = new Question5();
+        Question5 ll3 = new Question5();
+        Question5 ll4 = new Question5();
+        ll.addLast(2);
+        ll.addLast(4);
+        ll.addLast(8);
+        ll.addLast(10);
+
+        ll2.addLast(1);
+        ll2.addLast(3);
+        ll2.addLast(3);
+        ll2.addLast(6);
+        ll2.addLast(11);
+        ll2.addLast(14);
+
+        ll3.addLast(4);
+        ll3.addLast(9);
+        ll3.addLast(10);
+        ll3.addLast(16);
+        ll3.addLast(20);
+
+        ll4.addLast(21);
+        ll4.addLast(22);
+        ll4.addLast(23);
+        ll4.addLast(24);
+
+        // ll.print();
+        // ll2.print();
+
+        Node arr[] = {ll.head, ll2.head, ll3.head, ll4.head};
+        Node temp = mergeKSortedLL(arr);
+
+        while(temp != null){
+            System.out.print(temp.data + " -> ");
+            temp = temp.next;
+        }
+
+        System.out.println("null");
 
     }
 }
